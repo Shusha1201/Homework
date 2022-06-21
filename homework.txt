@@ -1,0 +1,135 @@
+package com.company;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class Invoice {
+    String supplier;
+    String receiving;
+    double order;
+    int delivery;
+    int invoice;
+    String product;
+    int QtyOrdered;
+    int QtyReceived;
+    String date;
+    double cost;
+    double value;
+    double balance;
+
+    public String getSupplier() { return supplier; }
+
+    public String getReceiver() { return receiving; }
+
+    public double getOrder() { return order; }
+
+    public int getDelivery() { return delivery; }
+
+    public int getInvoice() { return invoice; }
+
+    public String getProduct() { return product; }
+
+    public int QtyOrdered() { return QtyOrdered; }
+
+    public int QtyReceived() { return QtyReceived; }
+
+    public String getDate() { return date; }
+
+    public double getCost() { return cost; }
+
+    public double getValue() { return value; }
+
+    public double getBalance() { return balance; }
+
+    public void setSupplier(String supplier) { this.supplier = supplier; }
+
+    public void setReceiver(String receiver) { this.receiving = receiver; }
+
+    public void setOrder(double order) { this.order = order; }
+
+    public void setDelivery(int delivery) { this.delivery = delivery; }
+
+    public void setInvoice(int invoice) { this.invoice = invoice; }
+
+    public void setProduct(String product) { this.product = product; }
+
+    public void setQtyOrdered(int QtyOrdered) { this.QtyOrdered = QtyOrdered; }
+
+    public void setQtyReceived(int QtyReceived) { this.QtyReceived = QtyReceived; }
+
+    public void setDate(String date) { this.date = date; }
+
+    public void setCost(double cost) { this.cost = cost; }
+
+    public void setValue(double value) { this.value = value; }
+
+    public void setBalance(double balance) { this.balance = balance; }
+
+    public Invoice (String supplier, String receiving, double order, int delivery,
+                    int invoice, String product, int QtyOrdered, int QtyReceived, String date,
+                    double cost, double value, double balance) {
+        this.supplier = supplier;
+        this.receiving = receiving;
+        this.order = order;
+        this.delivery = delivery;
+        this.invoice = invoice;
+        this.product = product;
+        this.QtyOrdered = QtyOrdered;
+        this.QtyReceived = QtyReceived;
+        this.date = date;
+        this.cost = cost;
+        this.value = value;
+        this.balance = balance;
+    }
+
+    @Override
+    public String toString() {
+        return "Invoice{" +
+                "supplier='" + supplier + '\'' +
+                ", receiving='" + receiving + '\'' +
+                ", order=" + order +
+                ", delivery=" + delivery +
+                ", invoice=" + invoice +
+                ", product='" + product + '\'' +
+                ", QtyOrdered=" + QtyOrdered +
+                ", QtyReceived=" + QtyReceived +
+                ", date=" + date +
+                ", cost=" + cost +
+                ", value=" + value +
+                ", balance=" + balance +
+                '}';
+    }
+
+    public static class Program {
+        private static Arrays collection;
+
+        public static void main(String[] args) {
+            ArrayList<Invoice> invoiceList = new ArrayList<>();
+            Invoice invoice1 = new Invoice("Gamma", "Panna", 3,
+                    14, 1234, "Crochet", 12, 12, "2022-07-18", 140,
+                    1680, 1100);
+            Invoice invoice2 = new Invoice("YarnArt", "Panna", 5,
+                    12, 1356, "Yarn", 15, 15, "2022-08-21", 2.5,
+                    37.5, 100);
+
+            invoiceList.add(invoice1);
+            invoiceList.add(invoice2);
+        }
+
+        public static void inputSuppliers(ArrayList<Invoice> invoiceList) {
+            ArrayList<String> suppliers = new ArrayList<>();
+            suppliers.add("Gamma");
+            suppliers.add("YarnArt");
+
+            ArrayList<String> allGoods = new ArrayList<>();
+            allGoods.add("Crochet");
+            allGoods.add("Yarn");
+
+            // отображение всех товаров на складе
+            System.out.println("List all products in the shop: " + allGoods);
+
+            //отоображение всех поставщиков
+            System.out.println("List of all suppliers: " + suppliers);
+        }
+    }
+}
